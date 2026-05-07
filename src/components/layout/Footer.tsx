@@ -44,8 +44,7 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-text-secondary text-sm">
-              <li>Email: karen.penzo.us@gmail.com</li>
-              <li>Phone: 403 888 2052</li>
+              <li>Email: karen.penzo.ca@gmail.com</li>
               <li>Calgary, AB</li>
             </ul>
           </div>
