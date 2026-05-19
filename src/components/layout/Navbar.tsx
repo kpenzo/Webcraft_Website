@@ -47,7 +47,7 @@ export function Navbar() {
               href="/contact" 
               className="bg-gradient-to-r from-primary to-primary-light text-white px-5 py-2.5 rounded-xl font-medium hover:shadow-[0_0_30px_rgba(104,86,227,0.4)] transition-all"
             >
-              Get Started
+              Get a Quote
             </Link>
           </div>
           <button 
@@ -75,7 +75,7 @@ export function Navbar() {
               className="block bg-gradient-to-r from-primary to-primary-light text-white px-5 py-2.5 rounded-xl font-medium text-center" 
               onClick={() => setIsOpen(false)}
             >
-              Get Started
+              Get a Quote
             </Link>
           </div>
         </div>

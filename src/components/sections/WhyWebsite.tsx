@@ -3,33 +3,33 @@ import { Check } from "lucide-react";
 
 const benefits = [
   {
-    title: "Get More Customers",
-    description: "A professional website helps you reach more customers searching for your services online.",
-    icon: "🌐",
+    title: "More Quote Requests",
+    description: "Make it easy for homeowners to understand your services, trust your business, and request a quote.",
+    icon: "☎️",
   },
   {
-    title: "Looks Professional",
-    description: "Build trust with potential customers using a polished, expert website.",
-    icon: "✨",
+    title: "Trust-Building Design",
+    description: "A polished website helps you look established without feeling overpriced or corporate.",
+    icon: "✓",
   },
   {
-    title: "Works on Mobile",
-    description: "95% of customers search on phones. We make sure your site looks great everywhere.",
+    title: "Built for Phone Users",
+    description: "Most local customers compare businesses on mobile. Your site should be fast, clear, and easy to contact from a phone.",
     icon: "📱",
   },
   {
-    title: "Easy to Update",
-    description: "Simple dashboard to update your content. No coding needed.",
-    icon: "🔄",
+    title: "Local SEO Foundations",
+    description: "Service pages, city targeting, and local trust signals help customers find the right nearby option.",
+    icon: "📍",
   },
   {
-    title: "Fast Loading",
-    description: "Lightning-fast sites that keep visitors engaged and convert to customers.",
+    title: "Clear Calls-to-Action",
+    description: "Simple contact paths and quote-focused copy make it obvious what visitors should do next.",
     icon: "⚡",
   },
   {
-    title: "SEO Ready",
-    description: "Built for search engines so customers can find your business.",
+    title: "Fast Loading",
+    description: "Fast pages keep mobile visitors engaged and make your business feel easier to work with.",
     icon: "🎯",
   },
 ];
@@ -43,10 +43,11 @@ export function WhyWebsite() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Why You Need a <span className="gradient-text">Website</span>
+            Why These Websites <span className="gradient-text">Convert Better</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            In today&apos;s digital world, your website is your best salesperson - working 24/7.
+            Your website should do more than look nice. It should help people choose you,
+            trust you, and contact you when they need the job done.
           </p>
         </div>
         
@@ -56,7 +57,7 @@ export function WhyWebsite() {
               key={benefit.title}
               className="glass-card rounded-2xl p-6 hover:bg-white/[0.06] transition-all duration-300"
             >
-              <div className="text-4xl mb-4">{benefit.icon}</div>
+              <div className="text-3xl mb-4">{benefit.icon}</div>
               <h3 className="text-white font-semibold text-lg mb-2">{benefit.title}</h3>
               <p className="text-text-secondary">{benefit.description}</p>
             </div>

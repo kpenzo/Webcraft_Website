@@ -8,7 +8,7 @@ const DOMAIN = "https://nextgenwebdevelopment.com";
 export const metadata: Metadata = {
   title: "NextGen Web Development",
   description:
-    "Affordable professional websites for trades and small businesses. Get your website in 3 days starting at $199.",
+    "Lead-ready websites for contractors, trades, and local service companies. Built to help generate more calls, quote requests, and local trust.",
   metadataBase: new URL(DOMAIN),
   robots: {
     index: true,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "NextGen Web Development",
-    description: "Affordable professional websites for trades and small businesses. Get your website in 3 days starting at $199.",
+    description: "Lead-ready websites for contractors, trades, and local service companies. Built to help generate more calls, quote requests, and local trust.",
     url: DOMAIN,
     siteName: "NextGen Web Development",
     locale: "en_CA",

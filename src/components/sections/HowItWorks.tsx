@@ -4,23 +4,23 @@ import { GlassCard } from "@/components/ui";
 const steps = [
   {
     step: 1,
-    title: "Choose Your Package",
-    description: "Select a package that fits your needs. We offer Basic, Standard, or Custom options.",
+    title: "Tell Us Your Trade",
+    description: "Share your services, service areas, ideal jobs, and what customers usually ask before booking.",
   },
   {
     step: 2,
-    title: "Share Your Info",
-    description: "Tell us about your business, services, and what pages you need.",
+    title: "Get a Clear Plan",
+    description: "We map the pages, local trust points, quote flow, and timeline before anything is built.",
   },
   {
     step: 3,
-    title: "We Build Your Site",
-    description: "Our team creates your professional website in just 3 days.",
+    title: "We Build the Website",
+    description: "Your site is written and arranged to help visitors understand, trust, and contact your business.",
   },
   {
     step: 4,
-    title: "Launch & Grow",
-    description: "Review, make changes, and launch. We'll help you get found online.",
+    title: "Launch & Get Found",
+    description: "Review the site, request edits, then launch with contact forms, mobile layouts, and local SEO basics ready.",
   },
 ];
 
@@ -33,10 +33,10 @@ export function HowItWorks() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            How It <span className="gradient-text">Works</span>
+            Simple Process. <span className="gradient-text">No Stress.</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Get your professional website in just 4 simple steps.
+            A clear path from first message to live website, built for busy business owners.
           </p>
         </div>
         

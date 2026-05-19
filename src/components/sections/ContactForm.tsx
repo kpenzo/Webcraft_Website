@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui";
-import { Send, Check, Mail } from "lucide-react";
+import { Send, Check } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mbdwlgrv";
 
@@ -41,17 +41,18 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="relative py-24 lg:py-32">
+    <section id="contact" className="relative py-20 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-accent-pink/10 rounded-full blur-[128px] pointer-events-none" />
       
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Get In <span className="gradient-text">Touch</span>
+            Get a <span className="gradient-text">Website Plan</span>
           </h2>
           <p className="text-text-secondary text-lg">
-            Ready to start? Send us a message and we&apos;ll get back to you within 24 hours.
+            Tell us what you do, where you work, and what kind of jobs you want more of.
+            We&apos;ll reply with a clear next step.
           </p>
         </div>
         
@@ -60,14 +61,14 @@ export function ContactForm() {
             <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
               <Check className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-white font-semibold text-xl mb-2">Message Sent!</h3>
+            <h3 className="text-white font-semibold text-xl mb-2">Request Sent</h3>
             <p className="text-text-secondary">
-              We&apos;ll get back to you within 24 hours.
+              We&apos;ll review your business and get back to you within 24 hours.
             </p>
           </div>
         ) : (
-          <form ref={formRef} onSubmit={handleSubmit} action={FORMSPREE_ENDPOINT} method="POST" className="glass-card rounded-2xl p-8">
-            <input type="text" name="phone" value="111 111 1111" hidden readOnly />
+          <form ref={formRef} onSubmit={handleSubmit} action={FORMSPREE_ENDPOINT} method="POST" className="glass-card rounded-2xl p-6 sm:p-8">
+            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" hidden />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -113,8 +114,8 @@ export function ContactForm() {
             </div>
             
             <div className="mb-6">
-              <label htmlFor="message" className="block text-white font-medium mb-2">
-                How Can We Help?
+                <label htmlFor="message" className="block text-white font-medium mb-2">
+                What do you want the website to help with?
               </label>
               <textarea
                 id="message"
@@ -122,7 +123,7 @@ export function ContactForm() {
                 required
                 rows={4}
                 className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-text-muted focus:outline-none focus:border-primary transition-colors resize-none"
-                placeholder="Tell us about your business and what you need..."
+                placeholder="Example: more quote requests for roofing repairs in Calgary, better Google presence, and a clearer project gallery."
               />
             </div>
             
@@ -133,9 +134,12 @@ export function ContactForm() {
             <Button type="submit" variant="glow" fullWidth disabled={loading}>
               <span className="flex items-center justify-center">
                 <Send className="w-5 h-5 mr-2" />
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? "Sending..." : "Get My Website Plan"}
               </span>
             </Button>
+            <p className="text-text-muted text-xs text-center mt-4">
+              No spam and no pressure. We only use your details to reply to your request.
+            </p>
           </form>
         )}
       </div>

@@ -2,8 +2,11 @@ import {
   Hero,
   Packages,
   WhyWebsite,
+  DemoWebsites,
+  BeforeAfter,
   HowItWorks,
   BusinessesWeHelp,
+  LocalVisibility,
   Testimonials,
   FinalCTA,
   ContactForm,
@@ -15,8 +18,11 @@ export default function HomePage() {
       <Hero />
       <Packages />
       <WhyWebsite />
-      <HowItWorks />
+      <DemoWebsites />
+      <BeforeAfter />
       <BusinessesWeHelp />
+      <LocalVisibility />
+      <HowItWorks />
       <Testimonials />
       <FinalCTA />
       <ContactForm />

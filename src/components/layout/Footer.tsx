@@ -10,8 +10,8 @@ export function Footer() {
               NextGen <span className="gradient-text">Web</span>
             </Link>
             <p className="text-text-secondary mt-4 max-w-md">
-              Professional websites for tradespeople and small businesses. 
-              Get online in just 3 days - no tech skills needed.
+              Lead-ready websites for trades and local service companies that need
+              more calls, more quote requests, and a stronger professional image.
             </p>
           </div>
 

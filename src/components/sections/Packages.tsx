@@ -5,61 +5,62 @@ import { Check } from "lucide-react";
 
 const packages = [
   {
-    name: "Basic",
+    name: "Starter",
     price: "$199",
-    description: "Perfect for small businesses just getting started",
+    description: "A clean lead-ready site for newer or smaller service businesses",
     features: [
-      "3 custom pages",
-      "Contact form integration",
-      "Mobile responsive design",
-      "Basic SEO setup",
-      "Social media links",
-      "1 round of revisions",
+      "Up to 3 core pages",
+      "Mobile-first quote form",
+      "Clear service and trust copy",
+      "Basic local SEO setup",
+      "Click-to-contact layout",
+      "1 revision round",
     ],
   },
   {
-    name: "Standard",
+    name: "Growth",
     price: "$299",
-    description: "Best value for growing businesses",
+    description: "Best fit for contractors who want more local quote requests",
     featured: true,
     features: [
-      "5 custom pages",
-      "Contact form with email",
-      "Image gallery",
-      "Advanced SEO",
-      "Google Maps integration",
-      "3 rounds of revisions",
-      "Priority support",
+      "Up to 5 conversion-focused pages",
+      "Service-area and local SEO sections",
+      "Quote request form with email",
+      "Google profile and map placement",
+      "Review and trust sections",
+      "3 revision rounds",
+      "Priority launch support",
     ],
   },
   {
-    name: "Custom",
+    name: "Add-Ons",
     price: "$99",
     perPage: true,
-    description: "Additional pages and features",
+    description: "Expand your site as your services and locations grow",
     features: [
-      "Custom page design",
-      "Any functionality",
-      "Custom forms",
-      "E-commerce ready",
-      "API integrations",
-      "Ongoing support",
+      "Extra service pages",
+      "City or service-area pages",
+      "Before/after project sections",
+      "Gallery or project portfolio",
+      "Additional form questions",
+      "Ongoing updates available",
     ],
   },
 ];
 
 export function Packages() {
   return (
-    <section id="packages" className="relative py-24 lg:py-32">
+    <section id="packages" className="relative py-20 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Choose Your <span className="gradient-text">Package</span>
+            Clear Packages for <span className="gradient-text">Local Growth</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Transparent pricing. No hidden fees. Everything you need to get online.
+            Fixed starting prices, clear deliverables, and optional add-ons when
+            you need more pages, service areas, or project proof.
           </p>
         </div>
         
@@ -76,7 +77,7 @@ export function Packages() {
               {pkg.featured && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="bg-gradient-to-r from-primary to-primary-light text-white text-xs font-semibold px-3 py-1 rounded-full">
-                    Most Popular
+                    Best for lead generation
                   </span>
                 </div>
               )}
@@ -104,11 +105,16 @@ export function Packages() {
                   variant={pkg.featured ? "glow" : "outline"} 
                   fullWidth
                 >
-                  Get Started
+                  {pkg.featured ? "Get My Website Plan" : "Ask About This Package"}
                 </Button>
             </div>
           ))}
         </div>
+
+        <p className="text-center text-text-muted text-sm mt-8 max-w-3xl mx-auto">
+          Hosting, domain, paid ads, and third-party subscriptions are separate when needed.
+          We keep the website scope clear before work starts.
+        </p>
       </div>
     </section>
   );

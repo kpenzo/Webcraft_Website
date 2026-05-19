@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: "Mike's Plumbing",
     owner: "Mike Thompson",
-    text: "Got my first website in 3 days. Already getting calls from new customers!",
+    text: "The new site made us look established and gave customers a simple way to ask for quotes.",
     rating: 5,
   },
   {
     name: "Elite Electric",
     owner: "Sarah Chen",
-    text: "Professional looking site that works great on mobile. Highly recommended!",
+    text: "Clear service pages, better mobile layout, and no confusing tech process. It felt easy from the start.",
     rating: 5,
   },
   {
     name: "Fresh Paint Co",
     owner: "James Wilson",
-    text: "Best investment for my business. The contact form alone is worth it.",
+    text: "We finally have a professional place to send homeowners before estimates. The quote form is doing its job.",
     rating: 5,
   },
 ];
@@ -31,10 +31,10 @@ export function Testimonials() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            What Clients <span className="gradient-text">Say</span>
+            Built Around <span className="gradient-text">Real Business Goals</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Don&apos;t just take our word for it - hear from our happy clients.
+            More trust, clearer services, and fewer barriers between a visitor and a quote request.
           </p>
         </div>
         

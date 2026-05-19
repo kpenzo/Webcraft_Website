@@ -15,6 +15,9 @@ const businessTypes = [
   "Roofer",
   "Landscaper",
   "Painter",
+  "Cleaner",
+  "Flooring",
+  "Remodeler",
   "Handyman",
   "Other",
 ];
@@ -59,11 +62,11 @@ export default function ContactPage() {
       <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Contact Us
+            Get a Website Plan
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Ready to get your professional website? Fill out the form below and
-            we will get back to you within 24 hours.
+            Tell us about your trade, service area, and goals. We will reply with
+            the simplest path to a website that helps generate quote requests.
           </p>
         </div>
       </section>
@@ -75,9 +78,9 @@ export default function ContactPage() {
               <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
                 <Check className="w-8 h-8 text-primary" />
               </div>
-              <h2 className="text-white font-semibold text-xl mb-2">Message Sent!</h2>
+              <h2 className="text-white font-semibold text-xl mb-2">Request Sent</h2>
               <p className="text-text-secondary mb-6">
-                We will get back to you within 24 hours.
+                We will review your business and get back to you within 24 hours.
               </p>
               <Link href="/">
                 <Button variant="outline">
@@ -87,7 +90,7 @@ export default function ContactPage() {
             </div>
           ) : (
             <form ref={formRef} onSubmit={handleSubmit} action={FORMSPREE_ENDPOINT} method="POST" className="glass-card rounded-2xl p-8">
-              <input type="text" name="phone" value="111 111 1111" hidden readOnly />
+              <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" hidden />
               
               <div className="space-y-6">
                 <div>
@@ -120,7 +123,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="businessType" className="block text-white font-medium mb-2">
-                    Business Type
+                    Trade or Business Type
                   </label>
                   <select
                     id="businessType"
@@ -138,7 +141,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="message" className="block text-white font-medium mb-2">
-                    Message
+                    What should the website help with?
                   </label>
                   <textarea
                     id="message"
@@ -146,7 +149,7 @@ export default function ContactPage() {
                     required
                     rows={5}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-text-muted focus:outline-none focus:border-primary transition-colors resize-none"
-                    placeholder="Tell us about your business and what you are looking for..."
+                    placeholder="Tell us your service area, main services, current website if you have one, and what kind of leads you want more of."
                   />
                 </div>
 
@@ -157,9 +160,12 @@ export default function ContactPage() {
                 <Button type="submit" variant="glow" fullWidth disabled={loading}>
                   <span className="flex items-center justify-center">
                     <Send size={18} className="mr-2" />
-                    {loading ? "Sending..." : "Send Message"}
+                    {loading ? "Sending..." : "Get My Website Plan"}
                   </span>
                 </Button>
+                <p className="text-text-muted text-xs text-center">
+                  No spam and no pressure. We only use your details to reply to your request.
+                </p>
               </div>
             </form>
           )}

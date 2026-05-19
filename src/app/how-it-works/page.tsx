@@ -7,23 +7,23 @@ import { GlassCard } from "@/components/ui";
 const steps = [
   {
     step: 1,
-    title: "Choose Your Package",
-    description: "Select a package that fits your needs. We offer Basic, Standard, or Custom options.",
+    title: "Tell Us Your Trade",
+    description: "Share your services, service areas, ideal jobs, and what customers usually ask before booking.",
   },
   {
     step: 2,
-    title: "Share Your Info",
-    description: "Tell us about your business, services, and what pages you need.",
+    title: "Get a Clear Plan",
+    description: "We map the pages, local trust points, quote flow, and timeline before anything is built.",
   },
   {
     step: 3,
-    title: "We Build Your Site",
-    description: "Our team creates your professional website in just 3 days.",
+    title: "We Build the Website",
+    description: "Your site is written and arranged to help visitors understand, trust, and contact your business.",
   },
   {
     step: 4,
-    title: "Launch & Grow",
-    description: "Review, make changes, and launch. We'll help you get found online.",
+    title: "Launch & Get Found",
+    description: "Review the site, request edits, then launch with contact forms, mobile layouts, and local SEO basics ready.",
   },
 ];
 
@@ -33,10 +33,11 @@ export default function HowItWorksPage() {
       <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            How It Works
+            Simple Process. No Stress.
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Get your professional website in just 4 simple steps. No tech skills needed.
+            A clear path from first message to live website, built for busy trade
+            and local service business owners.
           </p>
         </div>
       </section>
@@ -67,14 +68,14 @@ export default function HowItWorksPage() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to get started?
+            Ready to get more quote requests?
           </h2>
           <p className="text-text-secondary text-lg mb-8">
-            Let&apos;s build your professional website today.
+            Send your trade, service area, and goals. We will recommend a clear plan.
           </p>
           <Link href="/contact">
             <Button variant="glow" size="lg">
-              Get Started <ArrowRight size={20} className="ml-2" />
+              Get My Website Plan <ArrowRight size={20} className="ml-2" />
             </Button>
           </Link>
         </div>

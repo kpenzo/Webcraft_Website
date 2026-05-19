@@ -5,57 +5,56 @@ import { Button } from "@/components/ui";
 
 const packages = [
   {
-    name: "Basic",
+    name: "Starter",
     price: 199,
-    tagline: "Perfect for small businesses",
+    tagline: "For newer local service businesses",
     pages: 3,
     features: [
-      { name: "Up to 3 pages", included: true },
-      { name: "Mobile responsive design", included: true },
-      { name: "Contact form", included: true },
+      { name: "Up to 3 core pages", included: true },
+      { name: "Mobile-first layout", included: true },
+      { name: "Quote request form", included: true },
       { name: "Fast delivery (3 days)", included: true },
-      { name: "Modern design", included: true },
-      { name: "SEO basics", included: false },
-      { name: "Google Maps integration", included: false },
-      { name: "Social media links", included: false },
-      { name: "E-commerce ready", included: false },
+      { name: "Service and trust copy", included: true },
+      { name: "Basic local SEO setup", included: true },
+      { name: "Google map placement", included: false },
+      { name: "City or service-area pages", included: false },
+      { name: "Project gallery", included: false },
     ],
     popular: false,
   },
   {
-    name: "Standard",
+    name: "Growth",
     price: 299,
-    tagline: "Most popular choice",
+    tagline: "Most popular for quote requests",
     pages: 5,
     features: [
-      { name: "Up to 5 pages", included: true },
-      { name: "Mobile responsive design", included: true },
-      { name: "Contact form", included: true },
+      { name: "Up to 5 conversion-focused pages", included: true },
+      { name: "Mobile-first layout", included: true },
+      { name: "Quote request form", included: true },
       { name: "Fast delivery (3 days)", included: true },
-      { name: "Modern design", included: true },
-      { name: "SEO basics", included: true },
-      { name: "Google Maps integration", included: true },
-      { name: "Social media links", included: true },
-      { name: "E-commerce ready", included: false },
+      { name: "Service and trust copy", included: true },
+      { name: "Local SEO sections", included: true },
+      { name: "Google map placement", included: true },
+      { name: "Review and trust sections", included: true },
+      { name: "Project gallery", included: false },
     ],
     popular: true,
   },
   {
-    name: "Custom",
+    name: "Add-Ons",
     price: 99,
-    tagline: "Tailored to your needs",
+    tagline: "For more services, cities, and proof",
     pages: null,
     perPage: true,
     features: [
-      { name: "Unlimited pages", included: true },
-      { name: "Mobile responsive design", included: true },
-      { name: "Contact form", included: true },
-      { name: "Fast delivery (3 days)", included: true },
-      { name: "Modern design", included: true },
-      { name: "SEO basics", included: true },
-      { name: "Google Maps integration", included: true },
-      { name: "Social media links", included: true },
-      { name: "E-commerce ready", included: true },
+      { name: "Extra service pages", included: true },
+      { name: "City or service-area pages", included: true },
+      { name: "Before/after project sections", included: true },
+      { name: "Project gallery", included: true },
+      { name: "Extra form questions", included: true },
+      { name: "Ongoing updates available", included: true },
+      { name: "Ad landing pages", included: true },
+      { name: "Seasonal promotion pages", included: true },
     ],
     popular: false,
   },
@@ -67,11 +66,11 @@ export default function PackagesPage() {
       <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Our Packages
+            Website Packages for Local Service Businesses
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Choose the perfect package for your business. All packages include fast
-            delivery and professional design.
+            Clear starting prices for trades businesses that need a professional
+            website, better local trust, and more quote requests.
           </p>
         </div>
       </section>
@@ -91,7 +90,7 @@ export default function PackagesPage() {
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="bg-gradient-to-r from-primary to-primary-light text-white text-xs font-semibold px-3 py-1 rounded-full">
-                      Most Popular
+                      Best for lead generation
                     </span>
                   </div>
                 )}
@@ -118,7 +117,7 @@ export default function PackagesPage() {
                     )}
                   </div>
                   <span className="inline-block bg-white/5 text-text-secondary text-sm font-medium px-4 py-1 rounded-full border border-white/10">
-                    {pkg.pages ? `${pkg.pages} pages` : "Unlimited pages"}
+                    {pkg.pages ? `${pkg.pages} pages included` : "Add as needed"}
                   </span>
                 </div>
 
@@ -150,11 +149,22 @@ export default function PackagesPage() {
                     fullWidth
                   >
                     {pkg.price && !pkg.perPage
-                      ? "Get Started"
-                      : "Contact Us"}
+                      ? "Get My Website Plan"
+                      : "Ask About Add-Ons"}
                   </Button>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 glass-card rounded-2xl p-6 md:p-8">
+            <h2 className="text-white font-semibold text-xl mb-3">
+              What is not included in the starting price?
+            </h2>
+            <p className="text-text-secondary">
+              Domain registration, hosting upgrades, paid ads, email accounts, and
+              third-party tools are separate if your business needs them. You will
+              know the scope before work starts.
+            </p>
           </div>
         </div>
       </section>
@@ -165,11 +175,12 @@ export default function PackagesPage() {
             Not sure which package is right for you?
           </h2>
           <p className="text-text-secondary text-lg mb-8">
-            Contact us and we will help you find the perfect solution.
+            Send your trade, service area, and current website link if you have one.
+            We will recommend the simplest plan that makes sense.
           </p>
           <Link href="/contact">
             <Button variant="glow" size="lg">
-              Contact Us <ArrowRight size={20} className="ml-2" />
+              Book a Free Website Review <ArrowRight size={20} className="ml-2" />
             </Button>
           </Link>
         </div>
