@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Check } from "lucide-react";
 
 const beforeItems = [
@@ -40,12 +41,25 @@ export function BeforeAfter() {
               <h3 className="text-white font-semibold text-2xl">Hard to trust quickly</h3>
             </div>
             <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4 mb-6">
-              <div className="h-3 w-28 bg-white/15 rounded-full mb-4" />
-              <div className="h-24 bg-white/10 rounded-lg mb-4" />
-              <div className="space-y-2">
-                <div className="h-2 bg-white/15 rounded-full" />
-                <div className="h-2 bg-white/10 rounded-full w-3/4" />
-                <div className="h-8 bg-white/10 rounded-lg w-32 mt-4" />
+              <div className="rounded-lg bg-white/[0.03] border border-white/10 p-4">
+                <div className="flex items-center gap-1.5 mb-4">
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                </div>
+                <div className="h-3 w-32 bg-white/15 rounded-full mb-4" />
+                <div className="grid grid-cols-[1fr_0.6fr] gap-3 mb-4">
+                  <div className="h-24 bg-white/10 rounded-lg" />
+                  <div className="space-y-2">
+                    <div className="h-5 bg-white/10 rounded" />
+                    <div className="h-5 bg-white/10 rounded" />
+                    <div className="h-5 bg-white/10 rounded" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-2 bg-white/15 rounded-full" />
+                  <div className="h-2 bg-white/10 rounded-full w-3/4" />
+                </div>
               </div>
             </div>
             <ul className="space-y-3">
@@ -67,16 +81,21 @@ export function BeforeAfter() {
               </p>
               <h3 className="text-white font-semibold text-2xl">Ready for quote requests</h3>
             </div>
-            <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <div className="h-3 w-32 bg-white/25 rounded-full" />
-                <div className="h-8 w-24 bg-primary/60 rounded-lg" />
-              </div>
-              <div className="h-24 bg-white/10 rounded-lg mb-4" />
-              <div className="grid grid-cols-3 gap-2">
-                <div className="h-12 bg-white/10 rounded-lg" />
-                <div className="h-12 bg-white/10 rounded-lg" />
-                <div className="h-12 bg-white/10 rounded-lg" />
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-3 mb-6">
+              <div className="relative overflow-hidden rounded-lg border border-white/10 bg-white shadow-2xl shadow-black/20">
+                <Image
+                  src="/portfolio/trades.png"
+                  alt="Modern desktop and mobile website mockups for local service businesses"
+                  width={1536}
+                  height={1024}
+                  sizes="(min-width: 1024px) 480px, 100vw"
+                  className="block w-full h-auto"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 to-transparent p-4">
+                  <div className="inline-flex rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white">
+                    Modern mobile-first presence
+                  </div>
+                </div>
               </div>
             </div>
             <ul className="space-y-3">

@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui";
-import { portfolioDemos } from "@/lib/portfolioDemos";
 
 export function DemoWebsites() {
   return (
@@ -48,21 +47,8 @@ export function DemoWebsites() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          {portfolioDemos.map((demo) => (
-            <Button
-              key={demo.slug}
-              href={`/examples/${demo.slug}`}
-              variant="outline"
-              className="min-h-14 w-full px-4 py-3 text-sm sm:text-base"
-            >
-              {demo.trade}
-            </Button>
-          ))}
-        </div>
-
         <p className="text-center text-text-muted text-sm mt-5">
-          Explore a trade to see the larger desktop and mobile presentation.
+          Explore trade-specific examples in the local trades section below.
         </p>
       </div>
     </section>

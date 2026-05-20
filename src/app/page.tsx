@@ -4,7 +4,6 @@ import {
   WhyWebsite,
   DemoWebsites,
   BeforeAfter,
-  HowItWorks,
   BusinessesWeHelp,
   LocalVisibility,
   Testimonials,
@@ -22,7 +21,6 @@ export default function HomePage() {
       <BeforeAfter />
       <BusinessesWeHelp />
       <LocalVisibility />
-      <HowItWorks />
       <Testimonials />
       <FinalCTA />
       <ContactForm />
