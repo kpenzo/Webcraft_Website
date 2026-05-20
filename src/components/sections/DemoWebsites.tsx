@@ -4,29 +4,68 @@ import { Button } from "@/components/ui";
 
 const demos = [
   {
-    type: "Plumbing Company",
-    result: "Emergency calls and quote requests",
-    description: "Urgent service messaging, trust badges, and clear contact options for homeowners who need help fast.",
+    trade: "Plumbing",
+    title: "Plumbing Company Demo",
+    image: "/portfolio/plumbing.png",
+    description:
+      "Modern plumbing website focused on emergency calls, trust, and fast mobile contact.",
+    cta: "View Example",
   },
   {
-    type: "Cleaning Company",
-    result: "Cleaner booking flow",
-    description: "A bright, welcoming layout that explains services quickly and makes booking feel low-stress.",
+    trade: "Cleaning",
+    title: "Cleaning Company Demo",
+    image: "/portfolio/cleaning.png",
+    description:
+      "Clean, modern website designed to help cleaning businesses look more professional and trustworthy.",
+    cta: "Explore Design",
   },
   {
-    type: "Painting Company",
-    result: "Stronger project trust",
-    description: "Bold visuals, quality cues, and project-focused copy that helps customers feel confident before reaching out.",
+    trade: "Painting",
+    title: "Painting Company Demo",
+    image: "/portfolio/painting.png",
+    description:
+      "Lead-focused painting company website designed to showcase quality work and generate quote requests.",
+    cta: "See Demo",
   },
   {
-    type: "Landscaping Company",
-    result: "Seasonal service demand",
-    description: "Outdoor transformation visuals paired with local service pages and easy quote calls-to-action.",
+    trade: "Landscaping",
+    title: "Landscaping Company Demo",
+    image: "/portfolio/landscaping.png",
+    description:
+      "Premium landscaping website focused on visual presentation and local credibility.",
+    cta: "View Example",
   },
   {
-    type: "Flooring & Remodeling",
-    result: "Premium estimate requests",
-    description: "Warm, high-value presentation for craftsmanship, project proof, and homeowner confidence.",
+    trade: "Electrical",
+    title: "Electrical Company Demo",
+    image: "/portfolio/electrical.png",
+    description:
+      "Professional electrical services website optimized for trust and quick customer contact.",
+    cta: "Explore Design",
+  },
+  {
+    trade: "Flooring",
+    title: "Flooring Company Demo",
+    image: "/portfolio/flooring.png",
+    description:
+      "Modern flooring website designed to highlight craftsmanship and premium results.",
+    cta: "See Demo",
+  },
+  {
+    trade: "HVAC",
+    title: "HVAC Company Demo",
+    image: "/portfolio/hvac.png",
+    description:
+      "Responsive HVAC website focused on service calls, maintenance plans, and local visibility.",
+    cta: "View Example",
+  },
+  {
+    trade: "Roofing",
+    title: "Roofing Company Demo",
+    image: "/portfolio/roofing.png",
+    description:
+      "Roofing website built to improve credibility, mobile conversion, and homeowner trust.",
+    cta: "Explore Design",
   },
 ];
 
@@ -37,54 +76,64 @@ export function DemoWebsites() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
+          <p className="text-primary-light text-sm font-semibold uppercase tracking-wide mb-3">
+            Portfolio examples
+          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Example Websites for <span className="gradient-text">Local Trades</span>
+            Websites Built for <span className="gradient-text">Trades Businesses</span>
           </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Demo concepts inspired by real contractor website patterns: strong first
-            impressions, mobile layouts, trust signals, and clear quote paths.
+          <p className="text-text-secondary text-lg max-w-3xl mx-auto">
+            Realistic demo concepts mapped to the way local customers search,
+            compare, and contact service businesses on desktop and mobile.
           </p>
         </div>
 
-        <div className="glass-card rounded-2xl p-3 sm:p-4 lg:p-5 mb-8 lg:mb-10 overflow-hidden">
-          <div className="relative rounded-xl overflow-hidden border border-white/10 bg-white/[0.02]">
-            <Image
-              src="/demo-trades-showcase.png"
-              alt="Demo website concepts for plumbing, cleaning, painting, landscaping, and flooring trade businesses"
-              width={1536}
-              height={1024}
-              sizes="(min-width: 1280px) 1120px, 100vw"
-              priority={false}
-              className="w-full h-auto block"
-            />
-          </div>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 px-2 sm:px-3 pt-4">
-            <div>
-              <p className="text-white font-semibold">Trade-specific demo concepts</p>
-              <p className="text-text-secondary text-sm">
-                Each example pairs a desktop and mobile experience so business owners can
-                see how customers will compare and contact them on any device.
-              </p>
-            </div>
-            <Button href="/contact" variant="glow" className="w-full md:w-auto">
-              Request a Similar Demo
-            </Button>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {demos.map((demo) => (
+            <article
+              key={demo.trade}
+              className="glass-card group rounded-2xl p-4 sm:p-5 lg:p-6 flex flex-col"
+            >
+              <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white mb-5 shadow-2xl shadow-black/20">
+                <Image
+                  src={demo.image}
+                  alt={`${demo.title} desktop and mobile website mockup`}
+                  width={1536}
+                  height={1024}
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                  className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.025]"
+                />
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 flex-1">
+                <div>
+                  <p className="text-primary-light text-xs font-semibold uppercase tracking-wide mb-2">
+                    {demo.trade}
+                  </p>
+                  <h3 className="text-white font-semibold text-xl mb-2">{demo.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed max-w-xl">
+                    {demo.description}
+                  </p>
+                </div>
+                <Button href="/contact" variant="outline" className="w-full sm:w-auto flex-shrink-0">
+                  {demo.cta}
+                </Button>
+              </div>
+            </article>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
-          {demos.map((demo) => (
-            <div key={demo.type} className="glass-card rounded-2xl p-5 flex flex-col">
-              <p className="text-primary-light text-xs font-semibold uppercase tracking-wide mb-2">
-                {demo.type}
-              </p>
-              <h3 className="text-white font-semibold text-lg mb-2">{demo.result}</h3>
-              <p className="text-text-secondary text-sm mb-5 flex-1">{demo.description}</p>
-              <Button href="/contact" variant="outline" fullWidth>
-                View Example
-              </Button>
-            </div>
-          ))}
+        <div className="mt-8 lg:mt-10 glass-card rounded-2xl p-6 sm:p-8 text-center">
+          <h3 className="text-white font-semibold text-2xl mb-3">
+            Want a demo direction for your trade?
+          </h3>
+          <p className="text-text-secondary max-w-2xl mx-auto mb-6">
+            Send your business type, service area, and goals. We will recommend a
+            practical website structure built around calls, quote requests, and local trust.
+          </p>
+          <Button href="/contact" variant="glow" size="lg" className="w-full sm:w-auto">
+            Request a Similar Demo
+          </Button>
         </div>
       </div>
     </section>
