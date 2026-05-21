@@ -41,13 +41,13 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="relative py-20 lg:py-28">
+    <section id="contact" className="relative py-16 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-accent-pink/10 rounded-full blur-[128px] pointer-events-none" />
       
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-10 lg:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             Get a <span className="gradient-text">Website Plan</span>
           </h2>
           <p className="text-text-secondary text-lg">
@@ -70,7 +70,7 @@ export function ContactForm() {
           <form ref={formRef} onSubmit={handleSubmit} action={FORMSPREE_ENDPOINT} method="POST" className="glass-card rounded-2xl p-6 sm:p-8">
             <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" hidden />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-5 md:mb-6">
               <div>
                 <label htmlFor="name" className="block text-white font-medium mb-2">
                   Your Name
@@ -99,7 +99,7 @@ export function ContactForm() {
               </div>
             </div>
             
-            <div className="mb-6">
+            <div className="mb-5 md:mb-6">
               <label htmlFor="email" className="block text-white font-medium mb-2">
                 Email
               </label>
@@ -113,7 +113,7 @@ export function ContactForm() {
               />
             </div>
             
-            <div className="mb-6">
+            <div className="mb-5 md:mb-6">
                 <label htmlFor="message" className="block text-white font-medium mb-2">
                 What do you want the website to help with?
               </label>

@@ -50,12 +50,12 @@ const packages = [
 
 export function Packages() {
   return (
-    <section id="packages" className="relative py-20 lg:py-28">
+    <section id="packages" className="relative py-16 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-10 lg:mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             Clear Packages for <span className="gradient-text">Local Growth</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
@@ -68,7 +68,7 @@ export function Packages() {
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className={`glass-card rounded-2xl p-8 transition-all duration-300 ${
+              className={`glass-card rounded-2xl p-6 lg:p-8 transition-all duration-300 ${
                 pkg.featured
                   ? "border-primary/50 shadow-[0_0_40px_rgba(104,86,227,0.15)]"
                   : ""
@@ -82,7 +82,7 @@ export function Packages() {
                 </div>
               )}
               
-              <div className="text-center mb-6">
+              <div className="text-center mb-5 lg:mb-6">
                 <h3 className="text-white font-semibold text-xl mb-2">{pkg.name}</h3>
                 <div className="flex items-center justify-center gap-1 mb-2">
                   <span className="text-4xl font-bold gradient-text">{pkg.price}</span>
@@ -91,7 +91,7 @@ export function Packages() {
                 <p className="text-text-secondary text-sm">{pkg.description}</p>
               </div>
               
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-6 lg:mb-8">
                 {pkg.features.map((feature) => (
                   <li key={feature} className="flex items-center text-text-secondary text-sm">
                     <Check className="w-4 h-4 text-primary mr-3 flex-shrink-0" />

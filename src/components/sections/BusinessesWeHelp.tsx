@@ -14,12 +14,12 @@ const businesses = [
 
 export function BusinessesWeHelp() {
   return (
-    <section className="relative py-20 lg:py-28">
+    <section className="relative py-16 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-10 lg:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             Made for <span className="gradient-text">Local Trades</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
@@ -33,7 +33,7 @@ export function BusinessesWeHelp() {
             <Link
               key={biz.name}
               href={biz.href}
-              className="glass-card rounded-xl p-4 text-center hover:bg-white/[0.06] transition-all duration-300 group"
+              className="glass-card rounded-xl p-4 sm:p-5 text-center hover:bg-white/[0.06] transition-all duration-300 group"
             >
               <div className="text-3xl mb-2">{biz.icon}</div>
               <div className="text-white font-medium text-sm">{biz.name}</div>

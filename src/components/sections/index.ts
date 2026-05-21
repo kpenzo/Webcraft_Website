@@ -1,4 +1,5 @@
 export { Hero } from "./Hero";
+export { TrustBar } from "./TrustBar";
 export { Packages } from "./Packages";
 export { WhyWebsite } from "./WhyWebsite";
 export { DemoWebsites } from "./DemoWebsites";

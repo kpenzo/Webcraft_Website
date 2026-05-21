@@ -4,15 +4,15 @@ import { Button } from "@/components/ui";
 
 export function DemoWebsites() {
   return (
-    <section className="relative py-20 lg:py-28">
+    <section className="relative py-16 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 lg:mb-12">
           <p className="text-primary-light text-sm font-semibold uppercase tracking-wide mb-3">
             Portfolio examples
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             Websites Built for <span className="gradient-text">Local Businesses</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-3xl mx-auto">
@@ -21,7 +21,7 @@ export function DemoWebsites() {
           </p>
         </div>
 
-        <div className="glass-card rounded-2xl p-3 sm:p-4 lg:p-5 mb-8 lg:mb-10 overflow-hidden">
+        <div className="glass-card rounded-2xl p-3 sm:p-4 lg:p-5 mb-5 lg:mb-8 overflow-hidden">
           <div className="relative rounded-xl overflow-hidden border border-white/10 bg-white shadow-2xl shadow-black/30">
             <Image
               src="/portfolio/trades.png"

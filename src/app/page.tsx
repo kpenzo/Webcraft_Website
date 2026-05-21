@@ -1,5 +1,6 @@
 import {
   Hero,
+  TrustBar,
   Packages,
   WhyWebsite,
   DemoWebsites,
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <TrustBar />
       <Packages />
       <WhyWebsite />
       <DemoWebsites />
