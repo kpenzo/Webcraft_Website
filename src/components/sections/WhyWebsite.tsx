@@ -36,7 +36,7 @@ const benefits = [
 
 export function WhyWebsite() {
   return (
-    <section className="relative py-16 lg:py-28">
+    <section className="relative py-12 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
       

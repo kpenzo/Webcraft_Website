@@ -8,7 +8,6 @@ import {
   BusinessesWeHelp,
   LocalVisibility,
   Testimonials,
-  FinalCTA,
   ContactForm,
 } from "@/components/sections";
 
@@ -24,7 +23,6 @@ export default function HomePage() {
       <BusinessesWeHelp />
       <LocalVisibility />
       <Testimonials />
-      <FinalCTA />
       <ContactForm />
     </>
   );

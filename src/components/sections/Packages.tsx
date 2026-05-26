@@ -50,7 +50,7 @@ const packages = [
 
 export function Packages() {
   return (
-    <section id="packages" className="relative py-16 lg:py-28">
+    <section id="packages" className="relative py-12 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

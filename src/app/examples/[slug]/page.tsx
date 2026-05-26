@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check } from "lucide-react";
-import { Button } from "@/components/ui";
+import { ContactForm } from "@/components/sections";
 import { portfolioDemos } from "@/lib/portfolioDemos";
 
 export function generateStaticParams() {
@@ -27,7 +27,7 @@ export default async function ExamplePage({ params }: PageProps) {
 
   return (
     <>
-      <section className="pt-24 pb-10 md:pt-32 md:pb-14">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
@@ -45,12 +45,9 @@ export default async function ExamplePage({ params }: PageProps) {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight">
                 {demo.title}
               </h1>
-              <p className="text-text-secondary text-lg mb-8">
+              <p className="text-text-secondary text-lg">
                 {demo.description}
               </p>
-              <Button href="/contact" variant="glow" size="lg" className="w-full sm:w-auto">
-                Want something similar?
-              </Button>
             </div>
 
             <div className="glass-card rounded-2xl p-3 sm:p-4 overflow-hidden">
@@ -70,7 +67,7 @@ export default async function ExamplePage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="py-12 md:py-16">
+      <section className="py-10 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-6 lg:gap-8">
             <div className="glass-card rounded-2xl p-6 sm:p-8">
@@ -115,20 +112,7 @@ export default async function ExamplePage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="py-12 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Want something similar for your business?
-          </h2>
-          <p className="text-text-secondary text-lg mb-8">
-            Send your trade, service area, and goals. We will recommend a practical
-            website plan focused on calls, quote requests, and local trust.
-          </p>
-          <Button href="/contact" variant="glow" size="lg" className="w-full sm:w-auto">
-            Get My Website Plan
-          </Button>
-        </div>
-      </section>
+      <ContactForm />
     </>
   );
 }

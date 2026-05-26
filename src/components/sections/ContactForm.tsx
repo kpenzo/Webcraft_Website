@@ -41,12 +41,12 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="relative py-16 lg:py-28">
+    <section id="contact" className="relative py-12 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-accent-pink/10 rounded-full blur-[128px] pointer-events-none" />
       
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 lg:mb-12">
+        <div className="text-center mb-8 lg:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             Get a <span className="gradient-text">Website Plan</span>
           </h2>

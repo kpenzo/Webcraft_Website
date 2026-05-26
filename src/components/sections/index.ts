@@ -8,5 +8,4 @@ export { HowItWorks } from "./HowItWorks";
 export { BusinessesWeHelp } from "./BusinessesWeHelp";
 export { LocalVisibility } from "./LocalVisibility";
 export { Testimonials } from "./Testimonials";
-export { FinalCTA } from "./FinalCTA";
 export { ContactForm } from "./ContactForm";

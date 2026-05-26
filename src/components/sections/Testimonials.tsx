@@ -5,31 +5,31 @@ const testimonials = [
   {
     name: "Mike's Plumbing",
     owner: "Mike Thompson",
-    text: "Most of our customers now contact us directly through the website from their phones.",
+    text: "We started getting more quote requests from people finding us on their phones, which was exactly what we needed.",
     rating: 5,
   },
   {
     name: "Elite Electric",
     owner: "Sarah Chen",
-    text: "The new website made our business look much more professional locally.",
+    text: "The site finally makes us look as professional online as we are when we show up for a job.",
     rating: 5,
   },
   {
     name: "Fresh Paint Co",
     owner: "James Wilson",
-    text: "Customers can now find our services much more easily online.",
+    text: "Customers understand what we offer faster now, and it is easier for them to ask for an estimate.",
     rating: 5,
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="relative py-16 lg:py-28">
+    <section className="relative py-12 lg:py-28">
       <div className="absolute inset-0 bg-noise pointer-events-none" />
       <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 lg:mb-14">
+        <div className="text-center mb-8 lg:mb-14">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Built Around <span className="gradient-text">Real Business Goals</span>
           </h2>
