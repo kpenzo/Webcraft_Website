@@ -112,6 +112,60 @@ export default async function ExamplePage({ params }: PageProps) {
         </div>
       </section>
 
+      <section className="py-10 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-7 md:mb-10">
+            <p className="text-primary-light text-sm font-semibold uppercase tracking-wide mb-3">
+              Portfolio preview
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              Website Examples for {demo.trade} Businesses
+            </h2>
+            <p className="text-text-secondary text-lg max-w-2xl">
+              Three polished example layouts showing how a local {demo.trade.toLowerCase()}
+              {" "}business can present services, build trust, and make quote requests easier.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+            {demo.galleryImages.map((image, index) => (
+              <a
+                key={image}
+                href={image}
+                target="_blank"
+                rel="noreferrer"
+                className="group glass-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 shadow-2xl shadow-black/10 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_18px_60px_rgba(0,0,0,0.28)]"
+                aria-label={`Open ${demo.trade} website example ${index + 1}`}
+              >
+                <div className="overflow-hidden rounded-xl border border-white/10 bg-white">
+                  <Image
+                    src={image}
+                    alt={`${demo.trade} website portfolio example ${index + 1}`}
+                    width={1200}
+                    height={900}
+                    sizes="(min-width: 1024px) 380px, (min-width: 768px) 33vw, 100vw"
+                    className="block aspect-[4/3] h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.035]"
+                  />
+                </div>
+                <div className="flex items-center justify-between gap-3 px-2 pb-2 pt-4">
+                  <div>
+                    <p className="text-white font-semibold">
+                      {demo.trade} concept {index + 1}
+                    </p>
+                    <p className="text-text-muted text-sm">
+                      Click to preview
+                    </p>
+                  </div>
+                  <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-semibold text-text-secondary transition-colors group-hover:border-primary/30 group-hover:text-primary-light">
+                    View
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <ContactForm />
     </>
   );
