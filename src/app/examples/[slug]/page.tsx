@@ -122,12 +122,13 @@ export default async function ExamplePage({ params }: PageProps) {
               Website Examples for {demo.trade} Businesses
             </h2>
             <p className="text-text-secondary text-lg max-w-2xl">
-              Three polished example layouts showing how a local {demo.trade.toLowerCase()}
-              {" "}business can present services, build trust, and make quote requests easier.
+              Three polished example layouts showing how a local{" "}
+              {demo.trade.toLowerCase()} business can present services, build
+              trust, and make quote requests easier.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {demo.galleryImages.map((image, index) => (
               <a
                 key={image}
