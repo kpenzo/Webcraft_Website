@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 import { Check } from "lucide-react";
+import { ResponsivePortfolioImage } from "@/components/ui";
 
 const beforeItems = [
   "Hard to read on mobile",
@@ -74,7 +74,7 @@ export function BeforeAfter() {
 
           <div className="hidden lg:flex items-center text-text-muted text-3xl px-2">→</div>
 
-          <div className="glass-card relative overflow-hidden rounded-2xl p-4 sm:p-5 md:p-6 border-primary/40 shadow-[0_0_48px_rgba(104,86,227,0.16)]">
+          <div className="glass-card relative overflow-hidden rounded-2xl p-4 sm:p-5 md:p-6 border-primary/40 shadow-lg shadow-primary/10 sm:shadow-[0_0_48px_rgba(104,86,227,0.16)]">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent-pink/5 pointer-events-none" />
 
             <div className="relative z-10 mb-4 md:mb-5">
@@ -92,17 +92,17 @@ export function BeforeAfter() {
             </div>
 
             <div className="relative z-10 rounded-2xl border border-primary/25 bg-primary/5 p-2 sm:p-3 mb-5 md:mb-6">
-              <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white shadow-2xl shadow-black/30">
-                <Image
-                  src="/portfolio/plumbing.png"
+              <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white shadow-lg shadow-black/20 sm:shadow-2xl sm:shadow-black/30">
+                <ResponsivePortfolioImage
+                  src="/portfolio/plumbing.webp"
                   alt="Modern professional plumbing website shown on desktop and mobile"
-                  width={1536}
-                  height={1024}
-                  sizes="(min-width: 1024px) 720px, 100vw"
+                  width={1200}
+                  height={800}
+                  sizes="(min-width: 1024px) 720px, (min-width: 768px) 92vw, 100vw"
                   className="block w-full h-auto scale-[1.02]"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/85 via-background/15 to-transparent p-3 sm:p-4">
-                  <div className="inline-flex rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                  <div className="inline-flex rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-white sm:backdrop-blur">
                     Desktop + mobile quote flow
                   </div>
                 </div>

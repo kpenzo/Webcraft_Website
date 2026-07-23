@@ -1,49 +1,61 @@
+type PortfolioImage = {
+  src: string;
+  width: number;
+  height: number;
+};
+
+const image = (src: string, width: number, height: number): PortfolioImage => ({
+  src,
+  width,
+  height,
+});
+
 const plumbingImages = [
-  "/portfolio/plumbing_1.png",
-  "/portfolio/plumbing_2.png",
-  "/portfolio/plumbing_3.png",
+  image("/portfolio/plumbing_1.webp", 900, 514),
+  image("/portfolio/plumbing_2.webp", 900, 600),
+  image("/portfolio/plumbing_3.webp", 900, 600),
 ];
 
 const cleaningImages = [
-  "/portfolio/cleaning_1.png",
-  "/portfolio/cleaning_2.png",
-  "/portfolio/cleaning_3.png",
+  image("/portfolio/cleaning_1.webp", 512, 512),
+  image("/portfolio/cleaning_2.webp", 512, 512),
+  image("/portfolio/cleaning_3.webp", 512, 512),
 ];
 
 const paintingImages = [
-  "/portfolio/painting_1.png",
-  "/portfolio/painting_2.png",
-  "/portfolio/painting_3.png",
+  image("/portfolio/painting_1.webp", 512, 1024),
+  image("/portfolio/painting_2.webp", 512, 1024),
+  image("/portfolio/painting_3.webp", 512, 1024),
 ];
 
 const landscapingImages = [
-  "/portfolio/landscaping_1.png",
-  "/portfolio/landscaping_2.png",
-  "/portfolio/landscaping_3.png",
+  image("/portfolio/landscaping_1.webp", 512, 1024),
+  image("/portfolio/landscaping_2.webp", 512, 1024),
+  image("/portfolio/landscaping_3.webp", 512, 1024),
 ];
 
 const electricalImages = [
-  "/portfolio/electric_1.png",
-  "/portfolio/electric_2.png",
-  "/portfolio/electric_3.png",
+  image("/portfolio/electric_1.webp", 512, 1024),
+  image("/portfolio/electric_2.webp", 512, 1024),
+  image("/portfolio/electric_3.webp", 512, 1024),
 ];
 
 const flooringImages = [
-  "/portfolio/flooring_1.png",
-  "/portfolio/flooring_2.png",
-  "/portfolio/flooring_3.png",
+  image("/portfolio/flooring_1.webp", 512, 1024),
+  image("/portfolio/flooring_2.webp", 512, 1024),
+  image("/portfolio/flooring_3.webp", 512, 1024),
 ];
 
 const hvacImages = [
-  "/portfolio/hvac_1.png",
-  "/portfolio/hvac_2.png",
-  "/portfolio/hvac_3.png",
+  image("/portfolio/hvac_1.webp", 512, 1024),
+  image("/portfolio/hvac_2.webp", 512, 1024),
+  image("/portfolio/hvac_3.webp", 512, 1024),
 ];
 
 const roofingImages = [
-  "/portfolio/roofing_1.png",
-  "/portfolio/roofing_2.png",
-  "/portfolio/roofing_3.png",
+  image("/portfolio/roofing_1.webp", 512, 512),
+  image("/portfolio/roofing_2.webp", 512, 512),
+  image("/portfolio/roofing_3.webp", 512, 512),
 ];
 
 export const portfolioDemos = [
@@ -51,7 +63,7 @@ export const portfolioDemos = [
     slug: "plumbing",
     trade: "Plumbing",
     title: "Plumbing Company Demo",
-    image: "/portfolio/plumbing.png",
+    image: image("/portfolio/plumbing.webp", 1200, 800),
     galleryImages: plumbingImages,
     description:
       "Modern plumbing website focused on emergency calls, trust, and fast mobile contact.",
@@ -65,7 +77,7 @@ export const portfolioDemos = [
     slug: "cleaning",
     trade: "Cleaning",
     title: "Cleaning Company Demo",
-    image: "/portfolio/cleaning.png",
+    image: image("/portfolio/cleaning.webp", 1200, 800),
     galleryImages: cleaningImages,
     description:
       "Clean, modern website designed to help cleaning businesses look more professional and trustworthy.",
@@ -79,7 +91,7 @@ export const portfolioDemos = [
     slug: "painting",
     trade: "Painting",
     title: "Painting Company Demo",
-    image: "/portfolio/painting.png",
+    image: image("/portfolio/painting.webp", 1200, 800),
     galleryImages: paintingImages,
     description:
       "Lead-focused painting company website designed to showcase quality work and generate quote requests.",
@@ -93,7 +105,7 @@ export const portfolioDemos = [
     slug: "landscaping",
     trade: "Landscaping",
     title: "Landscaping Company Demo",
-    image: "/portfolio/landscaping.png",
+    image: image("/portfolio/landscaping.webp", 1200, 800),
     galleryImages: landscapingImages,
     description:
       "Premium landscaping website focused on visual presentation and local credibility.",
@@ -107,7 +119,7 @@ export const portfolioDemos = [
     slug: "electrical",
     trade: "Electrical",
     title: "Electrical Company Demo",
-    image: "/portfolio/electrical.png",
+    image: image("/portfolio/electrical.webp", 1200, 800),
     galleryImages: electricalImages,
     description:
       "Professional electrical services website optimized for trust and quick customer contact.",
@@ -121,7 +133,7 @@ export const portfolioDemos = [
     slug: "flooring",
     trade: "Flooring",
     title: "Flooring Company Demo",
-    image: "/portfolio/flooring.png",
+    image: image("/portfolio/flooring.webp", 1200, 800),
     galleryImages: flooringImages,
     description:
       "Modern flooring website designed to highlight craftsmanship and premium results.",
@@ -135,7 +147,7 @@ export const portfolioDemos = [
     slug: "hvac",
     trade: "HVAC",
     title: "HVAC Company Demo",
-    image: "/portfolio/hvac.png",
+    image: image("/portfolio/hvac.webp", 1200, 800),
     galleryImages: hvacImages,
     description:
       "Responsive HVAC website focused on service calls, maintenance plans, and local visibility.",
@@ -149,7 +161,7 @@ export const portfolioDemos = [
     slug: "roofing",
     trade: "Roofing",
     title: "Roofing Company Demo",
-    image: "/portfolio/roofing.png",
+    image: image("/portfolio/roofing.webp", 1200, 800),
     galleryImages: roofingImages,
     description:
       "Roofing website built to improve credibility, mobile conversion, and homeowner trust.",

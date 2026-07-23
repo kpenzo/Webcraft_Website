@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check, ExternalLink } from "lucide-react";
 import { ContactForm } from "@/components/sections";
+import { ResponsivePortfolioImage } from "@/components/ui";
 import { portfolioDemos } from "@/lib/portfolioDemos";
 
 export function generateStaticParams() {
@@ -56,22 +56,21 @@ export default async function ExamplePage({ params }: PageProps) {
           <div className="space-y-8 md:space-y-12">
             {demo.galleryImages.map((image, index) => (
               <a
-                key={image}
-                href={image}
+                key={image.src}
+                href={image.src}
                 target="_blank"
                 rel="noreferrer"
-                className="group block glass-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 sm:p-3 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_22px_70px_rgba(0,0,0,0.32)]"
+                className="group block glass-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 sm:p-3 shadow-lg shadow-black/15 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_22px_70px_rgba(0,0,0,0.32)] sm:shadow-2xl"
                 aria-label={`Open ${demo.trade} website example ${index + 1}`}
               >
                 <div className="overflow-hidden rounded-xl border border-white/10 bg-white">
-                  <Image
-                    src={image}
+                  <ResponsivePortfolioImage
+                    src={image.src}
                     alt={`${demo.trade} website portfolio example ${index + 1}`}
-                    width={1536}
-                    height={1024}
-                    sizes="(min-width: 1280px) 1180px, 100vw"
+                    width={image.width}
+                    height={image.height}
+                    sizes="(min-width: 1280px) 1180px, (min-width: 768px) 92vw, 100vw"
                     className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.015]"
-                    priority={index === 0}
                   />
                 </div>
                 <div className="flex flex-col gap-2 px-2 pb-2 pt-4 sm:flex-row sm:items-center sm:justify-between">

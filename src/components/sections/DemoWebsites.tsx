@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import { Button } from "@/components/ui";
+import { Button, ResponsivePortfolioImage } from "@/components/ui";
 
 export function DemoWebsites() {
   return (
@@ -22,15 +21,14 @@ export function DemoWebsites() {
         </div>
 
         <div className="glass-card rounded-2xl p-3 sm:p-4 lg:p-5 mb-5 lg:mb-8 overflow-hidden">
-          <div className="relative rounded-xl overflow-hidden border border-white/10 bg-white shadow-2xl shadow-black/30">
-            <Image
-              src="/portfolio/trades.png"
+          <div className="relative rounded-xl overflow-hidden border border-white/10 bg-white shadow-lg shadow-black/20 sm:shadow-2xl sm:shadow-black/30">
+            <ResponsivePortfolioImage
+              src="/portfolio/trades.webp"
               alt="Collage of desktop and mobile website examples for local trades businesses"
-              width={1536}
-              height={1024}
-              sizes="(min-width: 1280px) 1120px, 100vw"
+              width={1200}
+              height={800}
+              sizes="(min-width: 1280px) 1120px, (min-width: 768px) 92vw, 100vw"
               className="block h-auto w-full"
-              priority={false}
             />
           </div>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 px-2 sm:px-3 pt-4">

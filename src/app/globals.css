@@ -109,6 +109,18 @@
       radial-gradient(2px 2px at 580px 90px, rgba(255,255,255,0.6), transparent);
     background-size: 600px 250px;
   }
+
+  @media (max-width: 640px) {
+    .glass,
+    .glass-card {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .glass-card:hover {
+      box-shadow: none;
+    }
+  }
 }
 
 @keyframes fadeIn {
