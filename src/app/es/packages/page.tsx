@@ -132,7 +132,7 @@ export default function SpanishPackagesPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">¿No sabes qué paquete encaja mejor?</h2>
           <p className="text-text-secondary text-lg mb-8">Envíanos tu oficio, zona de trabajo y web actual si tienes una. Te recomendaremos el plan más sencillo.</p>
-          <Link href="/es/contact">
+          <Link href="/es/contact" prefetch={false}>
             <Button variant="glow" size="lg">Pide una revisión gratuita <ArrowRight size={20} className="ml-2" /></Button>
           </Link>
         </div>

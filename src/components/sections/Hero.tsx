@@ -1,6 +1,4 @@
-"use client";
 import { Button } from "@/components/ui";
-import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { homeContent } from "@/lib/homeContent";
 
@@ -25,16 +23,12 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             {content.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={content.contactHref}>
-              <Button variant="glow" size="lg" className="w-full sm:w-auto">
-                {content.primaryCta}
-              </Button>
-            </Link>
-            <Link href={content.packagesHref}>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                {content.secondaryCta}
-              </Button>
-            </Link>
+            <Button href={content.contactHref} variant="glow" size="lg" className="w-full sm:w-auto">
+              {content.primaryCta}
+            </Button>
+            <Button href={content.packagesHref} variant="outline" size="lg" className="w-full sm:w-auto">
+              {content.secondaryCta}
+            </Button>
           </div>
           <p className="mt-5 text-sm text-text-muted">{content.trustLine}</p>
         </div>

@@ -71,7 +71,7 @@ export default function SpanishHowItWorksPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">¿Quieres recibir más solicitudes de presupuesto?</h2>
           <p className="text-text-secondary text-lg mb-8">Envíanos tu oficio, zona de trabajo y objetivos. Te recomendaremos un plan claro.</p>
-          <Link href="/es/contact">
+          <Link href="/es/contact" prefetch={false}>
             <Button variant="glow" size="lg">Pide tu propuesta <ArrowRight size={20} className="ml-2" /></Button>
           </Link>
         </div>

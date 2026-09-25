@@ -57,6 +57,7 @@ export default async function ExamplePage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
+            prefetch={false}
             className="inline-flex items-center text-text-secondary hover:text-white transition-colors mb-7"
           >
             <ArrowLeft size={18} className="mr-2" />

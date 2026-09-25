@@ -1,4 +1,3 @@
-"use client";
 import { Button, ResponsivePortfolioImage } from "@/components/ui";
 import type { Locale } from "@/lib/i18n";
 import { homeContent } from "@/lib/homeContent";

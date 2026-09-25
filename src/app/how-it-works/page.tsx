@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui";
@@ -73,7 +72,7 @@ export default function HowItWorksPage() {
           <p className="text-text-secondary text-lg mb-8">
             Send your trade, service area, and goals. We will recommend a clear plan.
           </p>
-          <Link href="/contact">
+          <Link href="/contact" prefetch={false}>
             <Button variant="glow" size="lg">
               Get My Website Plan <ArrowRight size={20} className="ml-2" />
             </Button>

@@ -93,7 +93,7 @@ export default async function SpanishExamplePage({ params }: PageProps) {
     <>
       <section className="pt-24 pb-6 md:pt-32 md:pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/es" className="inline-flex items-center text-text-secondary hover:text-white transition-colors mb-7">
+          <Link href="/es" prefetch={false} className="inline-flex items-center text-text-secondary hover:text-white transition-colors mb-7">
             <ArrowLeft size={18} className="mr-2" />
             Volver al portfolio
           </Link>

@@ -14,7 +14,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-[1.4fr_0.8fr_0.8fr_1fr] gap-8 lg:gap-10">
           <div>
-            <Link href={locale === "es" ? "/es" : "/"} className="text-2xl font-bold text-white inline-block">
+            <Link href={locale === "es" ? "/es" : "/"} prefetch={false} className="text-2xl font-bold text-white inline-block">
               NextGen <span className="gradient-text">Web</span>
             </Link>
             <p className="text-text-secondary mt-4 max-w-md leading-relaxed">{content.description}</p>
@@ -25,7 +25,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               {nav.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-text-secondary hover:text-white transition-colors">{link.label}</Link>
+                  <Link href={link.href} prefetch={false} className="text-text-secondary hover:text-white transition-colors">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -35,7 +35,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               {content.demoLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-text-secondary hover:text-white transition-colors">{link.label}</Link>
+                  <Link href={link.href} prefetch={false} className="text-text-secondary hover:text-white transition-colors">{link.label}</Link>
                 </li>
               ))}
             </ul>

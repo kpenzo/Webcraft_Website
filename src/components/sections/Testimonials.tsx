@@ -1,4 +1,3 @@
-"use client";
 import { Star } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { homeContent } from "@/lib/homeContent";

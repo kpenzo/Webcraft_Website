@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui";
@@ -178,7 +177,7 @@ export default function PackagesPage() {
             Send your trade, service area, and current website link if you have one.
             We will recommend the simplest plan that makes sense.
           </p>
-          <Link href="/contact">
+          <Link href="/contact" prefetch={false}>
             <Button variant="glow" size="lg">
               Book a Free Website Review <ArrowRight size={20} className="ml-2" />
             </Button>

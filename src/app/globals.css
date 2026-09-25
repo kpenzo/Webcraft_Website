@@ -117,8 +117,15 @@
       -webkit-backdrop-filter: none;
     }
 
-    .glass-card:hover {
+    .glass-card:hover,
+    .glow-purple,
+    .glow-pink,
+    .glow-blue {
       box-shadow: none;
+    }
+
+    .bg-noise {
+      background-image: none;
     }
   }
 }

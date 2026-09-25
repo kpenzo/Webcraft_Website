@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui";
 import { Check } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
