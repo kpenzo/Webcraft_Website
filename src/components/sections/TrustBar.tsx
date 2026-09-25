@@ -1,14 +1,10 @@
 "use client";
+import type { Locale } from "@/lib/i18n";
+import { homeContent } from "@/lib/homeContent";
 
-const trustItems = [
-  "Built for Local Businesses",
-  "Mobile Optimized",
-  "Fast Turnaround",
-  "SEO Foundations Included",
-  "Calgary Based",
-];
+export function TrustBar({ locale = "en" }: { locale?: Locale }) {
+  const trustItems = homeContent[locale].trustBar;
 
-export function TrustBar() {
   return (
     <section className="relative border-y border-white/10 bg-white/[0.02]">
       <div className="absolute inset-0 bg-noise pointer-events-none" />

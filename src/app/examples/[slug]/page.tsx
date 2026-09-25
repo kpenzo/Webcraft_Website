@@ -1,9 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check, ExternalLink } from "lucide-react";
 import { ContactForm } from "@/components/sections";
 import { ResponsivePortfolioImage } from "@/components/ui";
 import { portfolioDemos } from "@/lib/portfolioDemos";
+import { DOMAIN, englishSlugToSpanish } from "@/lib/i18n";
 
 export function generateStaticParams() {
   return portfolioDemos.map((demo) => ({
@@ -16,6 +18,30 @@ type PageProps = {
     slug: string;
   }>;
 };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const demo = portfolioDemos.find((item) => item.slug === slug);
+
+  if (!demo) {
+    return {};
+  }
+
+  const spanishSlug = englishSlugToSpanish[slug] ?? slug;
+
+  return {
+    title: demo.title + " | NextGen Web Development",
+    description: demo.description,
+    alternates: {
+      canonical: DOMAIN + "/examples/" + slug,
+      languages: {
+        en: DOMAIN + "/examples/" + slug,
+        es: DOMAIN + "/es/examples/" + spanishSlug,
+        "x-default": DOMAIN + "/examples/" + slug,
+      },
+    },
+  };
+}
 
 export default async function ExamplePage({ params }: PageProps) {
   const { slug } = await params;

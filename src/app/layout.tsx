@@ -2,36 +2,35 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-
-const DOMAIN = "https://nextgenwebdevelopment.com";
+import { DOMAIN, pageMeta } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "NextGen Web Development",
-  description:
-    "Lead-ready websites for contractors, trades, and local service companies. Built to help generate more calls, quote requests, and local trust.",
+  title: pageMeta.en.title,
+  description: pageMeta.en.description,
   metadataBase: new URL(DOMAIN),
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "NextGen Web Development",
-    description: "Lead-ready websites for contractors, trades, and local service companies. Built to help generate more calls, quote requests, and local trust.",
+    title: pageMeta.en.title,
+    description: pageMeta.en.description,
     url: DOMAIN,
     siteName: "NextGen Web Development",
-    locale: "en_CA",
+    locale: pageMeta.en.locale,
     type: "website",
   },
   alternates: {
     canonical: DOMAIN,
+    languages: {
+      en: DOMAIN,
+      es: DOMAIN + "/es",
+      "x-default": DOMAIN,
+    },
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col antialiased">
