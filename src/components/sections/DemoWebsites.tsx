@@ -5,6 +5,18 @@ import { homeContent } from "@/lib/homeContent";
 export function DemoWebsites({ locale = "en" }: { locale?: Locale }) {
   const content = homeContent[locale].demos;
   const contactHref = locale === "es" ? "/es/contact" : "/contact";
+  const showcase =
+    locale === "es"
+      ? {
+          src: "/portfolio/portfolio-espana.webp",
+          width: 1536,
+          height: 1024,
+        }
+      : {
+          src: "/portfolio/trades.webp",
+          width: 1200,
+          height: 800,
+        };
 
   return (
     <section className="relative py-12 lg:py-28">
@@ -20,10 +32,10 @@ export function DemoWebsites({ locale = "en" }: { locale?: Locale }) {
         <div className="glass-card rounded-2xl p-3 sm:p-4 lg:p-5 mb-5 lg:mb-8 overflow-hidden">
           <div className="relative rounded-xl overflow-hidden border border-white/10 bg-white shadow-lg shadow-black/20 sm:shadow-2xl sm:shadow-black/30">
             <ResponsivePortfolioImage
-              src="/portfolio/trades.webp"
+              src={showcase.src}
               alt={content.alt}
-              width={1200}
-              height={800}
+              width={showcase.width}
+              height={showcase.height}
               sizes="(min-width: 1280px) 1120px, (min-width: 768px) 92vw, 100vw"
               className="block h-auto w-full"
             />
