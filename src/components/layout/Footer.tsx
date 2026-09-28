@@ -51,12 +51,28 @@ export function Footer() {
                 <span className="block text-text-muted text-xs uppercase tracking-wide mb-1">{content.location}</span>
                 {content.locationValue}
               </li>
+              {locale === "es" && (
+                <li className="pt-2 text-text-muted leading-relaxed">
+                  <span className="block text-white font-medium">NextGen Web Development</span>
+                  <span className="block">Titular: [NOMBRE COMPLETO]</span>
+                  <span className="block">NIF: [NIF]</span>
+                </li>
+              )}
             </ul>
           </div>
         </div>
-        <div className="border-t border-border mt-10 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-text-muted text-sm">
-          <p>&copy; {new Date().getFullYear()} NextGen Web Development.</p>
-          <p>{content.bottom}</p>
+        <div className="border-t border-border mt-10 sm:mt-12 pt-6 sm:pt-8 flex flex-col gap-4 text-text-muted text-sm">
+          {locale === "es" && (
+            <nav aria-label="Enlaces legales" className="flex flex-wrap gap-x-5 gap-y-2">
+              <Link href="/es/aviso-legal" prefetch={false} className="hover:text-white transition-colors">Aviso legal</Link>
+              <Link href="/es/politica-privacidad" prefetch={false} className="hover:text-white transition-colors">Política de privacidad</Link>
+              <Link href="/es/politica-cookies" prefetch={false} className="hover:text-white transition-colors">Política de cookies</Link>
+            </nav>
+          )}
+          <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+            <p>&copy; {new Date().getFullYear()} NextGen Web Development.</p>
+            <p>{content.bottom}</p>
+          </div>
         </div>
       </div>
     </footer>

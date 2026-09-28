@@ -43,7 +43,7 @@ const content = {
     error: "Algo ha fallado. Inténtalo de nuevo.",
     sending: "Enviando...",
     submit: "Pide tu propuesta",
-    privacy: "Sin spam y sin presión. Solo usamos tus datos para responder a tu solicitud.",
+    privacy: "Responsable: NextGen Web Development. Usaremos tus datos solo para responder a tu solicitud de propuesta. Puedes consultar la Política de privacidad.",
   },
 } as const;
 
@@ -126,7 +126,14 @@ export function ContactForm({ locale = "en" }: { locale?: Locale }) {
                 {loading ? copy.sending : copy.submit}
               </span>
             </Button>
-            <p className="text-text-muted text-xs text-center mt-4">{copy.privacy}</p>
+            {locale === "es" ? (
+              <p className="text-text-muted text-xs text-center mt-4 leading-relaxed">
+                Responsable: NextGen Web Development. Usaremos tus datos solo para responder a tu solicitud de propuesta. Consulta la{" "}
+                <a href="/es/politica-privacidad" className="text-primary-light hover:text-white underline underline-offset-4">Política de privacidad</a>.
+              </p>
+            ) : (
+              <p className="text-text-muted text-xs text-center mt-4">{copy.privacy}</p>
+            )}
           </form>
         )}
       </div>
