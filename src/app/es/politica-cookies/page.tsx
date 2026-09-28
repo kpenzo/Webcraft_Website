@@ -58,7 +58,7 @@ export default function PoliticaCookiesPage() {
           </section>
           <section className="space-y-3">
             <h2 className="text-white text-xl font-semibold">6. Contacto</h2>
-            <p className="text-text-secondary leading-relaxed">Para cualquier duda sobre esta política, puedes escribir a [EMAIL].</p>
+            <p className="text-text-secondary leading-relaxed">Para cualquier duda sobre esta política, puedes escribir a info@nextgenwebdevelopment.com.</p>
           </section>
         </div>
       </div>

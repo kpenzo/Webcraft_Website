@@ -20,10 +20,9 @@ const sections = [
     body: ["El responsable del tratamiento de los datos personales recogidos a través de este sitio web es:"],
     list: [
       "Nombre comercial: NextGen Web Development",
-      "Titular: [NOMBRE COMPLETO]",
-      "NIF: [NIF]",
+      "Titular: KP Studio",
       "Domicilio fiscal/profesional: [DOMICILIO FISCAL/PROFESIONAL]",
-      "Email de contacto para privacidad: [EMAIL]",
+      "Email de contacto para privacidad: info@nextgenwebdevelopment.com",
     ],
   },
   {
@@ -69,7 +68,7 @@ const sections = [
   },
   {
     title: "7. Transferencias internacionales",
-    body: ["Algunos proveedores técnicos, como Formspree, Cloudflare o GitHub, pueden estar ubicados fuera del Espacio Económico Europeo o utilizar infraestructura internacional. En esos casos, las transferencias se realizarán conforme a las garantías previstas por la normativa aplicable, como cláusulas contractuales tipo, decisiones de adecuación u otros mecanismos válidos. El usuario puede solicitar más información escribiendo a [EMAIL]."],
+    body: ["Algunos proveedores técnicos, como Formspree, Cloudflare o GitHub, pueden estar ubicados fuera del Espacio Económico Europeo o utilizar infraestructura internacional. En esos casos, las transferencias se realizarán conforme a las garantías previstas por la normativa aplicable, como cláusulas contractuales tipo, decisiones de adecuación u otros mecanismos válidos. El usuario puede solicitar más información escribiendo a info@nextgenwebdevelopment.com."],
   },
   {
     title: "8. Derechos de las personas usuarias",
@@ -77,7 +76,7 @@ const sections = [
   },
   {
     title: "9. Cómo ejercer los derechos",
-    body: ["Para ejercer derechos, el usuario puede enviar una solicitud a [EMAIL], indicando el derecho que desea ejercer y aportando la información necesaria para verificar su identidad si fuera preciso. También puede escribir al domicilio indicado en esta política cuando dicho dato esté completado."],
+    body: ["Para ejercer derechos, el usuario puede enviar una solicitud a info@nextgenwebdevelopment.com, indicando el derecho que desea ejercer y aportando la información necesaria para verificar su identidad si fuera preciso. También puede escribir al domicilio indicado en esta política cuando dicho dato esté completado."],
   },
   {
     title: "10. Reclamación ante la AEPD",

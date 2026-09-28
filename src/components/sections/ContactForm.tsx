@@ -43,7 +43,7 @@ const content = {
     error: "Algo ha fallado. Inténtalo de nuevo.",
     sending: "Enviando...",
     submit: "Pide tu propuesta",
-    privacy: "Responsable: NextGen Web Development. Usaremos tus datos solo para responder a tu solicitud de propuesta. Puedes consultar la Política de privacidad.",
+    privacy: "Responsable: KP Studio, nombre comercial NextGen Web Development. Usaremos tus datos solo para responder a tu solicitud de propuesta. Puedes consultar la Política de privacidad.",
   },
 } as const;
 
@@ -128,7 +128,7 @@ export function ContactForm({ locale = "en" }: { locale?: Locale }) {
             </Button>
             {locale === "es" ? (
               <p className="text-text-muted text-xs text-center mt-4 leading-relaxed">
-                Responsable: NextGen Web Development. Usaremos tus datos solo para responder a tu solicitud de propuesta. Consulta la{" "}
+                Responsable: KP Studio, nombre comercial NextGen Web Development. Usaremos tus datos solo para responder a tu solicitud de propuesta. Consulta la{" "}
                 <a href="/es/politica-privacidad" className="text-primary-light hover:text-white underline underline-offset-4">Política de privacidad</a>.
               </p>
             ) : (

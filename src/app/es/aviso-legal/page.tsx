@@ -22,10 +22,9 @@ const sections = [
     ],
     list: [
       "Nombre comercial: NextGen Web Development",
-      "Titular: [NOMBRE COMPLETO]",
-      "NIF: [NIF]",
+      "Titular: KP Studio",
       "Domicilio fiscal/profesional: [DOMICILIO FISCAL/PROFESIONAL]",
-      "Email de contacto: [EMAIL]",
+      "Email de contacto: info@nextgenwebdevelopment.com",
       "Sitio web: https://nextgenwebdevelopment.com/es/",
     ],
   },

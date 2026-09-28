@@ -45,7 +45,11 @@ export function Footer() {
             <ul className="space-y-3 text-text-secondary text-sm">
               <li>
                 <span className="block text-text-muted text-xs uppercase tracking-wide mb-1">{content.email}</span>
-                <a href="mailto:karen.penzo.ca@gmail.com" className="hover:text-white transition-colors">karen.penzo.ca@gmail.com</a>
+                {locale === "es" ? (
+                  <a href="mailto:info@nextgenwebdevelopment.com" className="hover:text-white transition-colors">info@nextgenwebdevelopment.com</a>
+                ) : (
+                  <a href="mailto:karen.penzo.ca@gmail.com" className="hover:text-white transition-colors">karen.penzo.ca@gmail.com</a>
+                )}
               </li>
               <li>
                 <span className="block text-text-muted text-xs uppercase tracking-wide mb-1">{content.location}</span>
@@ -54,8 +58,7 @@ export function Footer() {
               {locale === "es" && (
                 <li className="pt-2 text-text-muted leading-relaxed">
                   <span className="block text-white font-medium">NextGen Web Development</span>
-                  <span className="block">Titular: [NOMBRE COMPLETO]</span>
-                  <span className="block">NIF: [NIF]</span>
+                  <span className="block">Titular: KP Studio</span>
                 </li>
               )}
             </ul>
