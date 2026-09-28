@@ -11,7 +11,7 @@ const spanishContent: Record<string, { trade: string; title: string; description
   plumbing: {
     trade: "Fontanería",
     title: "Ejemplos de webs para empresas de fontanería",
-    description: "Web moderna para fontaneros, enfocada en llamadas urgentes, confianza y contacto rápido desde móvil.",
+    description: "Cinco conceptos visuales para fontaneros en España, pensados para transmitir confianza y facilitar el contacto desde móvil.",
   },
   cleaning: {
     trade: "Limpieza",
@@ -31,7 +31,7 @@ const spanishContent: Record<string, { trade: string; title: string; description
   electrical: {
     trade: "Electricistas",
     title: "Ejemplos de webs para electricistas",
-    description: "Web profesional para servicios eléctricos, pensada para generar confianza y facilitar el contacto rápido.",
+    description: "Cinco conceptos visuales para electricistas en España, con estilos distintos para negocios locales y servicios urgentes.",
   },
   flooring: {
     trade: "Suelos",
@@ -47,6 +47,35 @@ const spanishContent: Record<string, { trade: string; title: string; description
     trade: "Tejados",
     title: "Ejemplos de webs para tejados y cubiertas",
     description: "Web para mejorar credibilidad, conversión móvil y confianza de propietarios que necesitan reparación o instalación.",
+  },
+};
+
+const spanishShowcases: Record<string, {
+  png: string;
+  webp: string;
+  small: string;
+  width: number;
+  height: number;
+  label: string;
+  alt: string;
+}> = {
+  plumbing: {
+    png: "/portfolio/fontaneros-espana.png",
+    webp: "/portfolio/fontaneros-espana.webp",
+    small: "/portfolio/fontaneros-espana-sm.webp",
+    width: 1312,
+    height: 1199,
+    label: "5 conceptos para fontaneros en España",
+    alt: "Cinco ejemplos de webs para empresas de fontanería en España",
+  },
+  electrical: {
+    png: "/portfolio/electricistas-espana.png",
+    webp: "/portfolio/electricistas-espana.webp",
+    small: "/portfolio/electricistas-espana-sm.webp",
+    width: 2256,
+    height: 1032,
+    label: "5 conceptos para electricistas en España",
+    alt: "Cinco ejemplos de webs para electricistas en España",
   },
 };
 
@@ -87,7 +116,67 @@ export default async function SpanishExamplePage({ params }: PageProps) {
   const demo = portfolioDemos.find((item) => item.slug === englishSlug);
   const content = englishSlug ? spanishContent[englishSlug] : undefined;
 
-  if (!demo || !content) notFound();
+  if (!demo || !content || !englishSlug) notFound();
+
+  const showcase = spanishShowcases[englishSlug];
+
+  if (showcase) {
+    return (
+      <>
+        <section className="pt-24 pb-6 md:pt-32 md:pb-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Link href="/es" prefetch={false} className="inline-flex items-center text-text-secondary hover:text-white transition-colors mb-7">
+              <ArrowLeft size={18} className="mr-2" />
+              Volver al portfolio
+            </Link>
+            <div className="max-w-4xl">
+              <p className="text-primary-light text-sm font-semibold uppercase tracking-wide mb-3">Portfolio de {content.trade}</p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">{content.title}</h1>
+              <p className="text-text-secondary text-lg md:text-xl max-w-3xl">{content.description}</p>
+            </div>
+          </div>
+        </section>
+        <section className="py-6 md:py-10">
+          <div className="max-w-[1600px] mx-auto px-3 sm:px-5 lg:px-8">
+            <a href={showcase.png} target="_blank" rel="noreferrer" className="group block glass-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 sm:p-3 shadow-lg shadow-black/15 transition-all duration-300 hover:border-primary/35 sm:shadow-2xl" aria-label={"Abrir showcase completo de " + content.trade}>
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-white">
+                <picture>
+                  <source type="image/webp" srcSet={`${showcase.small} 760w, ${showcase.webp} 1600w`} sizes="(min-width: 1400px) 1480px, (min-width: 768px) 94vw, 100vw" />
+                  <img
+                    src={showcase.png}
+                    alt={showcase.alt}
+                    width={showcase.width}
+                    height={showcase.height}
+                    loading="lazy"
+                    decoding="async"
+                    className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.01]"
+                  />
+                </picture>
+              </div>
+              <div className="flex flex-col gap-2 px-2 pb-2 pt-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-white font-semibold">{showcase.label}</p>
+                  <p className="text-text-muted text-sm">Mockups visuales adaptados al mercado español.</p>
+                </div>
+                <span className="inline-flex w-fit items-center rounded-full border border-white/10 px-3 py-1 text-xs font-semibold text-text-secondary transition-colors group-hover:border-primary/30 group-hover:text-primary-light">
+                  Abrir imagen completa
+                  <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
+                </span>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section className="py-4 md:py-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-text-secondary text-base md:text-lg">
+              Un portfolio compacto para imaginar cómo puede verse un negocio local con una web clara, profesional y preparada para recibir solicitudes.
+            </p>
+          </div>
+        </section>
+        <ContactForm locale="es" />
+      </>
+    );
+  }
 
   return (
     <>

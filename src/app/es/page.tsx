@@ -3,11 +3,9 @@ import {
   Hero,
   TrustBar,
   Packages,
-  WhyWebsite,
   DemoWebsites,
   BeforeAfter,
   BusinessesWeHelp,
-  LocalVisibility,
   Testimonials,
   ContactForm,
 } from "@/components/sections";
@@ -40,11 +38,9 @@ export default function SpanishHomePage() {
       <Hero locale="es" />
       <TrustBar locale="es" />
       <Packages locale="es" />
-      <WhyWebsite locale="es" />
       <DemoWebsites locale="es" />
       <BeforeAfter locale="es" />
       <BusinessesWeHelp locale="es" />
-      <LocalVisibility locale="es" />
       <Testimonials locale="es" />
       <ContactForm locale="es" />
     </>
