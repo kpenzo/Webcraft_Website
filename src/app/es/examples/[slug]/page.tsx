@@ -1,82 +1,156 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Check, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { ContactForm } from "@/components/sections";
 import { ResponsivePortfolioImage } from "@/components/ui";
-import { portfolioDemos } from "@/lib/portfolioDemos";
-import { DOMAIN, englishSlugToSpanish, spanishSlugToEnglish } from "@/lib/i18n";
+import { DOMAIN, spanishSlugToEnglish } from "@/lib/i18n";
 
-const spanishContent: Record<string, { trade: string; title: string; description: string }> = {
-  plumbing: {
-    trade: "Fontanería",
-    title: "Ejemplos de webs para empresas de fontanería",
-    description: "Cinco conceptos visuales para fontaneros en España, pensados para transmitir confianza y facilitar el contacto desde móvil.",
-  },
-  cleaning: {
-    trade: "Limpieza",
-    title: "Ejemplos de webs para empresas de limpieza",
-    description: "Web limpia y profesional para que empresas de limpieza transmitan confianza y reciban solicitudes claras.",
-  },
-  painting: {
-    trade: "Pintura",
-    title: "Ejemplos de webs para pintores profesionales",
-    description: "Web enfocada a mostrar calidad, trabajos realizados y solicitudes de presupuesto para pintura interior y exterior.",
-  },
-  landscaping: {
-    trade: "Jardinería",
-    title: "Ejemplos de webs para jardinería y paisajismo",
-    description: "Web visual y cuidada para presentar servicios de jardín, exteriores y mantenimiento con una imagen más premium.",
-  },
-  electrical: {
-    trade: "Electricistas",
-    title: "Ejemplos de webs para electricistas",
-    description: "Cinco conceptos visuales para electricistas en España, con estilos distintos para negocios locales y servicios urgentes.",
-  },
-  flooring: {
-    trade: "Suelos",
-    title: "Ejemplos de webs para suelos y reformas",
-    description: "Web moderna para destacar acabados, trabajos de calidad y solicitudes de presupuesto de mayor valor.",
-  },
-  hvac: {
-    trade: "Climatización",
-    title: "Ejemplos de webs para climatización",
-    description: "Web responsive para servicios de climatización, mantenimiento e instalaciones con enfoque local.",
-  },
-  roofing: {
-    trade: "Tejados",
-    title: "Ejemplos de webs para tejados y cubiertas",
-    description: "Web para mejorar credibilidad, conversión móvil y confianza de propietarios que necesitan reparación o instalación.",
-  },
+type SpanishContent = {
+  trade: string;
+  title: string;
+  description: string;
 };
 
-const spanishShowcases: Record<string, {
-  png: string;
-  webp: string;
-  small: string;
+type SpanishPortfolioImage = {
+  src: string;
   width: number;
   height: number;
   label: string;
   alt: string;
-}> = {
+};
+
+const spanishContent: Record<string, SpanishContent> = {
   plumbing: {
-    png: "/portfolio/fontaneros-espana.png",
-    webp: "/portfolio/fontaneros-espana.webp",
-    small: "/portfolio/fontaneros-espana-sm.webp",
-    width: 1312,
-    height: 1199,
-    label: "5 conceptos para fontaneros en España",
-    alt: "Cinco ejemplos de webs para empresas de fontanería en España",
+    trade: "Fontanería",
+    title: "Portfolio de webs para fontanería",
+    description: "Ejemplos visuales para fontaneros y empresas de fontanería en España.",
+  },
+  cleaning: {
+    trade: "Limpieza",
+    title: "Portfolio de webs para limpieza",
+    description: "Ejemplos visuales para empresas de limpieza, oficinas, comunidades y servicios locales.",
+  },
+  painting: {
+    trade: "Pintura",
+    title: "Portfolio de webs para pintura",
+    description: "Ejemplos visuales para pintores, decoración, comunidades y reformas ligeras.",
+  },
+  landscaping: {
+    trade: "Jardinería",
+    title: "Portfolio de webs para jardinería",
+    description: "Ejemplos visuales para jardineros, mantenimiento exterior y servicios de jardín.",
   },
   electrical: {
-    png: "/portfolio/electricistas-espana.png",
-    webp: "/portfolio/electricistas-espana.webp",
-    small: "/portfolio/electricistas-espana-sm.webp",
-    width: 2256,
-    height: 1032,
-    label: "5 conceptos para electricistas en España",
-    alt: "Cinco ejemplos de webs para electricistas en España",
+    trade: "Electricistas",
+    title: "Portfolio de webs para electricistas",
+    description: "Ejemplos visuales para electricistas, instalaciones, reparaciones y servicios urgentes.",
   },
+  flooring: {
+    trade: "Suelos",
+    title: "Portfolio de webs para suelos",
+    description: "Ejemplos visuales para instaladores de suelos, revestimientos y pequeñas reformas.",
+  },
+  hvac: {
+    trade: "Climatización",
+    title: "Portfolio de webs para climatización",
+    description: "Ejemplos visuales para climatización, aire acondicionado, calefacción y mantenimiento.",
+  },
+  roofing: {
+    trade: "Tejados",
+    title: "Portfolio de webs para tejados",
+    description: "Ejemplos visuales para cubiertas, tejados, impermeabilización y reparación.",
+  },
+};
+
+const image = (src: string, width: number, height: number, label: string, alt: string): SpanishPortfolioImage => ({
+  src,
+  width,
+  height,
+  label,
+  alt,
+});
+
+const spanishPortfolioImages: Record<string, SpanishPortfolioImage[]> = {
+  plumbing: [
+    image(
+      "/portfolio/fontaneros-espana.webp",
+      1312,
+      1199,
+      "Conceptos para fontaneros en España",
+      "Ejemplos de webs para empresas de fontanería en España",
+    ),
+  ],
+  electrical: [
+    image(
+      "/portfolio/electricistas-espana.webp",
+      2256,
+      1032,
+      "Conceptos para electricistas en España",
+      "Ejemplos de webs para electricistas en España",
+    ),
+  ],
+  cleaning: [
+    image(
+      "/portfolio/limpieza_es.webp",
+      512,
+      512,
+      "Web para empresa de limpieza",
+      "Web española para empresa de limpieza",
+    ),
+  ],
+  painting: [
+    image(
+      "/portfolio/pintura1.webp",
+      1024,
+      1536,
+      "Web completa para pintura y decoración",
+      "Web española completa para empresa de pintura y decoración",
+    ),
+    image(
+      "/portfolio/pintura_es.webp",
+      512,
+      512,
+      "Concepto compacto para pintores",
+      "Web española para pintores profesionales",
+    ),
+  ],
+  landscaping: [
+    image(
+      "/portfolio/jardineria_es.webp",
+      512,
+      512,
+      "Web para jardinería y mantenimiento",
+      "Web española para empresa de jardinería",
+    ),
+  ],
+  flooring: [
+    image(
+      "/portfolio/suelos_es.webp",
+      512,
+      512,
+      "Web para suelos y revestimientos",
+      "Web española para empresa de suelos y revestimientos",
+    ),
+  ],
+  hvac: [
+    image(
+      "/portfolio/climatizacion_es.webp",
+      512,
+      512,
+      "Web para climatización y confort",
+      "Web española para empresa de climatización",
+    ),
+  ],
+  roofing: [
+    image(
+      "/portfolio/tejados_es.webp",
+      512,
+      512,
+      "Web para cubiertas y tejados",
+      "Web española para empresa de tejados y cubiertas",
+    ),
+  ],
 };
 
 export function generateStaticParams() {
@@ -113,74 +187,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function SpanishExamplePage({ params }: PageProps) {
   const { slug } = await params;
   const englishSlug = spanishSlugToEnglish[slug];
-  const demo = portfolioDemos.find((item) => item.slug === englishSlug);
   const content = englishSlug ? spanishContent[englishSlug] : undefined;
+  const images = englishSlug ? spanishPortfolioImages[englishSlug] : undefined;
 
-  if (!demo || !content || !englishSlug) notFound();
-
-  const showcase = spanishShowcases[englishSlug];
-
-  if (showcase) {
-    return (
-      <>
-        <section className="pt-24 pb-6 md:pt-32 md:pb-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link href="/es" prefetch={false} className="inline-flex items-center text-text-secondary hover:text-white transition-colors mb-7">
-              <ArrowLeft size={18} className="mr-2" />
-              Volver al portfolio
-            </Link>
-            <div className="max-w-4xl">
-              <p className="text-primary-light text-sm font-semibold uppercase tracking-wide mb-3">Portfolio de {content.trade}</p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">{content.title}</h1>
-              <p className="text-text-secondary text-lg md:text-xl max-w-3xl">{content.description}</p>
-            </div>
-          </div>
-        </section>
-        <section className="py-6 md:py-10">
-          <div className="max-w-[1600px] mx-auto px-3 sm:px-5 lg:px-8">
-            <a href={showcase.png} target="_blank" rel="noreferrer" className="group block glass-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 sm:p-3 shadow-lg shadow-black/15 transition-all duration-300 hover:border-primary/35 sm:shadow-2xl" aria-label={"Abrir showcase completo de " + content.trade}>
-              <div className="overflow-hidden rounded-xl border border-white/10 bg-white">
-                <picture>
-                  <source type="image/webp" srcSet={`${showcase.small} 760w, ${showcase.webp} 1600w`} sizes="(min-width: 1400px) 1480px, (min-width: 768px) 94vw, 100vw" />
-                  <img
-                    src={showcase.png}
-                    alt={showcase.alt}
-                    width={showcase.width}
-                    height={showcase.height}
-                    loading="lazy"
-                    decoding="async"
-                    className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.01]"
-                  />
-                </picture>
-              </div>
-              <div className="flex flex-col gap-2 px-2 pb-2 pt-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-white font-semibold">{showcase.label}</p>
-                  <p className="text-text-muted text-sm">Mockups visuales adaptados al mercado español.</p>
-                </div>
-                <span className="inline-flex w-fit items-center rounded-full border border-white/10 px-3 py-1 text-xs font-semibold text-text-secondary transition-colors group-hover:border-primary/30 group-hover:text-primary-light">
-                  Abrir imagen completa
-                  <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
-                </span>
-              </div>
-            </a>
-          </div>
-        </section>
-        <section className="py-4 md:py-8">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-text-secondary text-base md:text-lg">
-              Un portfolio compacto para imaginar cómo puede verse un negocio local con una web clara, profesional y preparada para recibir solicitudes.
-            </p>
-          </div>
-        </section>
-        <ContactForm locale="es" />
-      </>
-    );
-  }
+  if (!content || !englishSlug || !images?.length) notFound();
 
   return (
     <>
-      <section className="pt-24 pb-6 md:pt-32 md:pb-10">
+      <section className="pt-24 pb-6 md:pt-32 md:pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/es" prefetch={false} className="inline-flex items-center text-text-secondary hover:text-white transition-colors mb-7">
             <ArrowLeft size={18} className="mr-2" />
@@ -189,32 +203,37 @@ export default async function SpanishExamplePage({ params }: PageProps) {
           <div className="max-w-4xl">
             <p className="text-primary-light text-sm font-semibold uppercase tracking-wide mb-3">Portfolio de {content.trade}</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">{content.title}</h1>
-            <p className="text-text-secondary text-lg md:text-xl max-w-3xl">{content.description}</p>
           </div>
         </div>
       </section>
-      <section className="py-8 md:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8 md:space-y-12">
-            {demo.galleryImages.map((image, index) => (
-              <a key={image.src} href={image.src} target="_blank" rel="noreferrer" className="group block glass-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 sm:p-3 shadow-lg shadow-black/15 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_22px_70px_rgba(0,0,0,0.32)] sm:shadow-2xl" aria-label={"Abrir ejemplo " + (index + 1) + " de " + content.trade}>
+
+      <section className="py-6 md:py-10">
+        <div className="max-w-[1500px] mx-auto px-3 sm:px-5 lg:px-8">
+          <div className="space-y-6 md:space-y-10">
+            {images.map((portfolioImage, index) => (
+              <a
+                key={portfolioImage.src}
+                href={portfolioImage.src}
+                target="_blank"
+                rel="noreferrer"
+                className="group block glass-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 sm:p-3 shadow-lg shadow-black/15 transition-all duration-300 hover:border-primary/35 sm:shadow-2xl"
+                aria-label={"Abrir imagen " + (index + 1) + " del portfolio de " + content.trade}
+              >
                 <div className="overflow-hidden rounded-xl border border-white/10 bg-white">
                   <ResponsivePortfolioImage
-                    src={image.src}
-                    alt={"Ejemplo de web para " + content.trade + " " + (index + 1)}
-                    width={image.width}
-                    height={image.height}
-                    sizes="(min-width: 1280px) 1180px, (min-width: 768px) 92vw, 100vw"
-                    className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.015]"
+                    src={portfolioImage.src}
+                    alt={portfolioImage.alt}
+                    width={portfolioImage.width}
+                    height={portfolioImage.height}
+                    sizes="(min-width: 1400px) 1380px, (min-width: 768px) 94vw, 100vw"
+                    eager={index === 0}
+                    className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.01]"
                   />
                 </div>
                 <div className="flex flex-col gap-2 px-2 pb-2 pt-4 sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <p className="text-white font-semibold">Concepto de web para {content.trade} {index + 1}</p>
-                    <p className="text-text-muted text-sm">Mockup grande de escritorio y móvil para un negocio local de {content.trade.toLowerCase()}.</p>
-                  </div>
+                  <p className="text-white font-semibold">{portfolioImage.label}</p>
                   <span className="inline-flex w-fit items-center rounded-full border border-white/10 px-3 py-1 text-xs font-semibold text-text-secondary transition-colors group-hover:border-primary/30 group-hover:text-primary-light">
-                    Abrir vista previa
+                    Abrir imagen completa
                     <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
                   </span>
                 </div>
@@ -223,21 +242,7 @@ export default async function SpanishExamplePage({ params }: PageProps) {
           </div>
         </div>
       </section>
-      <section className="py-6 md:py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-card rounded-2xl p-5 sm:p-6 md:p-7">
-            <h2 className="text-white text-2xl font-semibold mb-5">Por qué funciona este diseño</h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {["Diseño pensado para móvil", "Camino claro para pedir presupuesto", "Secciones que generan confianza", "Opciones rápidas de contacto"].map((item) => (
-                <li key={item} className="flex gap-3 text-text-secondary">
-                  <Check className="mt-0.5 h-5 w-5 text-primary flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+
       <ContactForm locale="es" />
     </>
   );
