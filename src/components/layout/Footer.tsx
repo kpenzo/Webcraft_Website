@@ -59,6 +59,8 @@ export function Footer() {
                 <li className="pt-2 text-text-muted leading-relaxed">
                   <span className="block text-white font-medium">NextGen Web Development</span>
                   <span className="block">Titular: KP Studio</span>
+                  <span className="block">Loreto 34, 08029 Barcelona</span>
+                  <span className="block">Área de servicio: España</span>
                 </li>
               )}
             </ul>

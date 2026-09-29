@@ -21,7 +21,7 @@ const sections = [
     list: [
       "Nombre comercial: NextGen Web Development",
       "Titular: KP Studio",
-      "Domicilio fiscal/profesional: [DOMICILIO FISCAL/PROFESIONAL]",
+      "Domicilio fiscal/profesional: Loreto 34, 08029 Barcelona",
       "Email de contacto para privacidad: info@nextgenwebdevelopment.com",
     ],
   },
@@ -76,7 +76,7 @@ const sections = [
   },
   {
     title: "9. Cómo ejercer los derechos",
-    body: ["Para ejercer derechos, el usuario puede enviar una solicitud a info@nextgenwebdevelopment.com, indicando el derecho que desea ejercer y aportando la información necesaria para verificar su identidad si fuera preciso. También puede escribir al domicilio indicado en esta política cuando dicho dato esté completado."],
+    body: ["Para ejercer derechos, el usuario puede enviar una solicitud a info@nextgenwebdevelopment.com, indicando el derecho que desea ejercer y aportando la información necesaria para verificar su identidad si fuera preciso. También puede escribir al domicilio indicado en esta política: Loreto 34, 08029 Barcelona."],
   },
   {
     title: "10. Reclamación ante la AEPD",

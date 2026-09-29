@@ -23,7 +23,7 @@ const sections = [
     list: [
       "Nombre comercial: NextGen Web Development",
       "Titular: KP Studio",
-      "Domicilio fiscal/profesional: [DOMICILIO FISCAL/PROFESIONAL]",
+      "Domicilio fiscal/profesional: Loreto 34, 08029 Barcelona",
       "Email de contacto: info@nextgenwebdevelopment.com",
       "Sitio web: https://nextgenwebdevelopment.com/es/",
     ],
